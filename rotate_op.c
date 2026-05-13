@@ -1,0 +1,78 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   rotate_op.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: davimar3 <davimar3@student.42lisboa.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/02/28 12:00:40 by davimar3          #+#    #+#             */
+/*   Updated: 2026/02/28 15:21:09 by davimar3         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "push_swap.h"
+
+void	ra_op(t_stack *stack)
+{
+	int	i;
+	int	temp;
+
+	if (stack->size_a > 1)
+	{
+		i = 0;
+		temp = stack->a[i];
+		while (i < stack->size_a - 1)
+		{
+			stack->a[i] = stack->a[i + 1];
+			i++;
+		}
+		stack->a[i] = temp;
+		ft_printf("ra\n");
+	}
+}
+
+void	rb_op(t_stack *stack)
+{
+	int	i;
+	int	temp;
+
+	if (stack->size_b > 1)
+	{
+		i = 0;
+		temp = stack->b[i];
+		while (i < stack->size_b - 1)
+		{
+			stack->b[i] = stack->b[i + 1];
+			i++;
+		}
+		stack->b[i] = temp;
+		ft_printf("rb\n");
+	}
+}
+
+void	rr_op(t_stack *stack)
+{
+	int	i;
+	int	temp;
+
+	if (stack->size_a > 1 && stack->size_b > 1)
+	{
+		i = 0;
+		temp = stack->a[i];
+		while (i < stack->size_a - 1)
+		{
+			stack->a[i] = stack->a[i + 1];
+			i++;
+		}
+		stack->a[i] = temp;
+		i = 0;
+		temp = stack->b[i];
+		while (i < stack->size_b - 1)
+		{
+			stack->b[i] = stack->b[i + 1];
+			i++;
+		}
+		stack->b[i] = temp;
+		ft_printf("rr\n");
+	}
+}
